@@ -2,6 +2,7 @@
 
 # Install NFS common
 sudo apt install -y nfs-common
+
 ## mount
 # sudo mount.nfs 192.168.1.*:/* /mnt
 ## /etc/fstab
