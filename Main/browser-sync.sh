@@ -1,5 +1,8 @@
 #!/bin/bash
 
 # browser-sync
-sudo npm config set registry https://registry.npm.taobao.org
-sudo npm install -g browser-sync
+# http://www.browsersync.cn/#install
+npm config set registry https://registry.npm.taobao.org
+npm install -g browser-sync
+
+# browser-sync start --server --files "**/*.css, **/*.html"

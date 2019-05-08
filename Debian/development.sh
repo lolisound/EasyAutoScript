@@ -7,12 +7,15 @@ fi
 apt update && apt upgrade -y && apt autoremove -y && apt autoclean
 
 ## vim
-apt install -y vim ctags git wget curl
+apt install -y vim ctags
+
+## git
+apt install -y git wget curl
 
 ## openssh
-apt install -y openssl openssh
+apt install -y openssl ssh
 
-## c++
+## c & c++
 apt install -y gcc g++ make
 
 ## python
@@ -23,7 +26,13 @@ apt install -y python3 python3-pip
 #update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 
 ## nodejs
+# https://github.com/nodesource/distributions/blob/master/README.md#deb
 apt install -y build-essential
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash  - 
-apt-get install -y nodejs
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Using Debian, as root
+# curl -sL https://deb.nodesource.com/setup_12.x | bash -
+# apt-get install -y nodejs
+
 npm config set registry https://registry.npm.taobao.org
