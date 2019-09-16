@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install
-sudo apt install -y git curl zsh zsh-syntax-highlighting
+sudo apt-get install -y git curl zsh zsh-syntax-highlighting
 
 # setting
 sudo sh -c 'echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> /etc/zsh/zshrc'

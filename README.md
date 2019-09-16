@@ -1,10 +1,6 @@
 # EasyAutoScript
 
-一些简易的自动化脚本/说明,用于创建主机后的简单设置。
-
-## Main
-
-- 通用于 Linux 操作系统的脚本
+一些简易的自动化脚本,用于创建主机后的设置。
 
 ## Debian / Ubuntu
 
@@ -20,3 +16,7 @@
 ## RedHat / CentOS
 
 - 用于 RedHat / CentOS 服务器端
+
+## Windows 
+
+- 用于 Windows 操作系统

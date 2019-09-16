@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt -y install numlockx
+sudo apt-get install -y numlockx

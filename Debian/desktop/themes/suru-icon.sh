@@ -1,6 +1,6 @@
 #!/bin/bash
 # devel
-sudo apt install -y meson ninja-build gnome-tweak-tool
+sudo apt-get install -y meson ninja-build gnome-tweak-tool
 # download
 git clone --depth=1 https://github.com/snwh/suru-icon-theme
 # build

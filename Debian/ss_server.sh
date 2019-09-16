@@ -1,6 +1,5 @@
 #!/bin/bash
-if [ "$UID" != "0" ]
-then
+if [ "$UID" != "0" ]; then
 	echo "请使用 root 账户执行本程序."
 	exit 0
 fi
@@ -12,7 +11,7 @@ echo 'Password'
 read password
 method='chacha20'
 
-apt-get update && apt-get -y install python3 python3-pip libsodium-dev
+apt-get update && apt-get install -y python3 python3-pip libsodium-dev
 ldconfig
 
 pip3 install shadowsocks
@@ -42,8 +41,8 @@ ExecStop=/usr/local/bin/ssserver -c /etc/shadowsocks/config.json -d stop
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target" > /etc/systemd/system/ssserver.service
+WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
 
-systemctl start ssserver.service
-systemctl enable ssserver.service
-systemctl status ssserver.service
+systemctl start shadowsocks.service
+systemctl enable shadowsocks.service
+systemctl status shadowsocks.service

@@ -1,5 +1,5 @@
 #!/bin/bash
-apt install -y screenfetch libreoffice vlc gimp inkscape
+# apt install -y screenfetch libreoffice vlc gimp inkscape
 
 ## Google Chrome
 # https://www.google.cn/chrome/index.html

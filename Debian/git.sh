@@ -6,6 +6,9 @@ read git_username
 echo "Enter your email:"
 read git_email
 
+## git
+sudo apt-get install -y git wget curl
+
 # Setting
 git config --global user.name \"$git_username\"
 git config --global user.email \"$git_email\"

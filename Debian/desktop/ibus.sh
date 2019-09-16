@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## 输入法
-sudo apt install -y ibus-rime
+sudo apt-get install -y ibus-rime
 
 ##  候选词数量为9
 mkdir -p ~/.config/ibus/rime

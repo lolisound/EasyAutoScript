@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install -y numix-gtk-theme gnome-tweak-tool
+sudo apt-get install -y numix-gtk-theme gnome-tweak-tool
