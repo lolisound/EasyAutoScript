@@ -2,14 +2,14 @@
 # Linux + Nginx + PostgreSQL + PHP
 
 # Nginx
-sudo apt-get install -y install nginx
+sudo apt-get install -y nginx
 
 # PostgreSQL
-sudo apt-get install -y install postgresql
+sudo apt-get install -y postgresql
 
 # PHP
-sudo apt-get install -y install php php-pgsql libapache2-mod-php
-sudo apt-get install -y install php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl
+sudo apt-get install -y php-fpm php-pgsql
+sudo apt-get install -y php php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl php-pear php-json php-cgi
 
 # PostgreSQL Settings
 sudo sed -i '85,90s/peer/md5/g' `find / -name pg_hba.conf`

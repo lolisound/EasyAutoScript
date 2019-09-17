@@ -83,8 +83,8 @@ sed -i '85,90s/peer/md5/g' `find / -name pg_hba.conf`
 sed -i '85,90s/ident/md5/g' `find / -name pg_hba.conf`
 
 # PHP
-apt-get install -y php php-pgsql libapache2-mod-php
-apt-get install -y php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl
+apt-get install -y php-fpm php-pgsql
+apt-get install -y php php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl php-pear php-json php-cgi
 
 ## Oh My Zsh
 apt-get install -y zsh zsh-syntax-highlighting
