@@ -9,6 +9,6 @@ pip3 install --upgrade pip
 
 # other
 #apt install -y libapache2-mod-wsgi-py3
-update-alternatives --install /usr/bin/python python /usr/bin/python2 1
-update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+#update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+#update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 #update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1

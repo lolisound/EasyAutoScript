@@ -67,8 +67,8 @@ apt-get install -y gcc g++ make
 
 ## Python3
 apt install -y python3 python3-pip
-update-alternatives --install /usr/bin/python python /usr/bin/python2 1
-update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+#update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+#update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 pip3 install --upgrade pip
 # pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
@@ -92,6 +92,8 @@ sh -c 'echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 sh -c 'echo "setopt no_nomatch" >> /etc/zsh/zshrc'
 sh -c 'echo "zstyle \":completion:*\" rehash true" >> /etc/zsh/zshrc'
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+echo "plugins=(zsh-autosuggestions)" >> ~/.zshrc
 
 ## Prompt information
 echo "------------------------------------------"

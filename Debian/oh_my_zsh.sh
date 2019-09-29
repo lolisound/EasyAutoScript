@@ -10,3 +10,6 @@ sudo sh -c 'echo "zstyle \":completion:*\" rehash true" >> /etc/zsh/zshrc'
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+echo "plugins=(zsh-autosuggestions)" >> ~/.zshrc
