@@ -56,7 +56,7 @@ systemctl restart sshd.service
 
 ## Vim
 apt-get install -y vim ctags
-git clone --depth=1 git@github.com:lolisound/vim-config.git
+git clone --depth=1 https://github.com/lolisound/vim-config.git
 cd vim-config
 bash ./install.sh
 cd -
