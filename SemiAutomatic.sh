@@ -67,8 +67,8 @@ apt-get install -y gcc g++ make
 
 ## Python3
 apt install -y python3 python3-pip
-#update-alternatives --install /usr/bin/python python /usr/bin/python2 1
-#update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 pip3 install --upgrade pip
 # pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
@@ -77,7 +77,7 @@ apt-get install -y nginx
 
 # PostgreSQL
 apt-get install -y postgresql
-
+pg_ctlcluster 11 main start
 # PostgreSQL Settings
 sed -i '85,90s/peer/md5/g' `find / -name pg_hba.conf`
 sed -i '85,90s/ident/md5/g' `find / -name pg_hba.conf`
@@ -87,13 +87,12 @@ apt-get install -y php-fpm php-pgsql
 apt-get install -y php php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl php-pear php-json php-cgi
 
 ## Oh My Zsh
-apt-get install -y zsh zsh-syntax-highlighting
+apt-get install -y zsh zsh-syntax-highlighting zsh-autosuggestions
 sh -c 'echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> /etc/zsh/zshrc'
 sh -c 'echo "setopt no_nomatch" >> /etc/zsh/zshrc'
 sh -c 'echo "zstyle \":completion:*\" rehash true" >> /etc/zsh/zshrc'
+sudo sh -c 'echo "plugins=(zsh-autosuggestions)" >> /etc/zsh/zshrc'
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-echo "plugins=(zsh-autosuggestions)" >> ~/.zshrc
 
 ## Prompt information
 echo "------------------------------------------"
@@ -107,6 +106,6 @@ pip -V
 sysctl net.ipv4.tcp_available_congestion_control
 sysctl net.ipv4.tcp_congestion_control
 lsmod | grep bbr
-echo "Please switch SSH port manually\n
+echo -e "Please switch SSH port manually\n
 Installation of other services\n
 Finally, restart manually"

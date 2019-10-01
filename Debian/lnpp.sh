@@ -6,6 +6,7 @@ sudo apt-get install -y nginx
 
 # PostgreSQL
 sudo apt-get install -y postgresql
+pg_ctlcluster 11 main start
 
 # PHP
 sudo apt-get install -y php-fpm php-pgsql

@@ -6,6 +6,7 @@ sudo apt-get install -y apache2
 
 # PostgreSQL
 sudo apt-get install -y postgresql
+pg_ctlcluster 11 main start
 
 # PHP
 sudo apt-get install -y php php-pgsql libapache2-mod-php

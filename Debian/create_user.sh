@@ -23,7 +23,8 @@ fi
 
 ### 创建普通用户，并设置密码
 if test -n "$username"; then
-    useradd $username
+    useradd -m $username
+	# useradd -m -s /bin/zsh $username
     echo $passwd | passwd --stdin  $username
 fi
 
