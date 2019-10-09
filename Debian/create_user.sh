@@ -30,5 +30,5 @@ fi
 
 ### 给用户添加sudo权限
 if test -n "$username"; then
-    sed -i "s/root	ALL=(ALL) 	ALL/root	ALL=(ALL) 	ALL\n$username	ALL=(ALL) 	ALL/g" /etc/sudoers
+    echo "$username  ALL=(ALL:ALL)  NOPASSWD:ALL" >> /etc/sudoers
 fi
