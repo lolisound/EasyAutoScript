@@ -25,7 +25,7 @@ fi
 if test -n "$username"; then
     useradd -m $username
 	# useradd -m -s /bin/zsh $username
-    echo $passwd | passwd --stdin  $username
+	echo -e "$passwd\n$passwd" | passwd $username
 fi
 
 ### 给用户添加sudo权限
