@@ -7,5 +7,5 @@ npm install -g browser-sync
 
 # browser-sync start --server --files "**/*.css, **/*.html"
 # echo -e alias browser-sync=\'browser-sync start --server --files \"**/*.css, **/*.html\"\' >> /etc/bash.bashrc
-echo -e alias browser-sync=\'browser-sync start --server --files \"**/*.css, **/*.html\"\' >> /etc/zsh/zshrc
+echo -e alias bwsync=\'browser-sync start --server --files \"**/*.css, **/*.html\"\' >> /etc/zsh/zshrc
 
