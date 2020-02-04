@@ -11,4 +11,5 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 
 ## pip upgrade
 pip3 install --upgrade pip
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 #pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U

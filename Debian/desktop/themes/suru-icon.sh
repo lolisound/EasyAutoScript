@@ -12,3 +12,5 @@ sudo ninja -C "build" install
 gsettings set org.gnome.desktop.interface icon-theme "Suru"
 # or the cursor theme
 gsettings set org.gnome.desktop.interface cursor-theme "Suru"
+# del
+rm -rf ./suru-icon-theme

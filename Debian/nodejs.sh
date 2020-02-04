@@ -13,7 +13,7 @@ if [ "$ID" == "debian" ]; then
 elif [ "$ID" == "ubuntu" ]; then
 	# Using Debian, as root
 	curl -sL https://deb.nodesource.com/setup_12.x | bash -
-	apt-get install -y nodejs
+	sudo apt-get install -y nodejs
 	npm config set registry https://registry.npm.taobao.org
 else
 	echo "Error, $ID not debian or ubuntu."
