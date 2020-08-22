@@ -1,3 +1,7 @@
+#!/bin/bash
+
+## Docker
+
 # 卸载旧版本
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
