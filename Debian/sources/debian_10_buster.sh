@@ -4,7 +4,7 @@ if [ "$UID" != "0" ]; then
 	exit 0
 fi
 
-apt install apt-transport-https -y
+apt install apt-transport-https ca-certificates -y
 
 mv /etc/apt/sources.list /etc/apt/sources.list.bak
 
@@ -17,3 +17,5 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib n
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free" > /etc/apt/sources.list
+
+apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean

@@ -14,3 +14,9 @@ if test -n "$hostname"; then
     echo "$hostname" > /etc/hostname
     hostname -F /etc/hostname
 fi
+
+# Change Timezone
+# dpkg-reconfigure tzdata
+
+# Change locales
+# dpkg-reconfigure locales

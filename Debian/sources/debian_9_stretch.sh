@@ -17,3 +17,5 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib 
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free" > /etc/apt/sources.list
+
+apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean
