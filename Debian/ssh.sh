@@ -5,7 +5,7 @@ if [ "$UID" != "0" ]; then
 fi
 
 # 安装
-apt-get install -y ssh openss
+apt-get install -y ssh openssl
 
 # SSH自动断线
 sed -i "s/#TCPKeepAlive yes/TCPKeepAlive yes\nClientAliveInterval 60\nClientAliveCountMax 120/g" /etc/ssh/sshd_config
