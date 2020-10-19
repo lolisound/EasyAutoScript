@@ -1,6 +1,7 @@
 #!/bin/bash
+
 if [ "$UID" != "0" ]; then
-	echo "请使用 root 账户执行本程序."
+	echo "Error: This script must be run as root !"
 	exit 0
 fi
 

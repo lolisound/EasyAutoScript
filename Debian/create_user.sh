@@ -1,5 +1,4 @@
 #!/bin/bash
-# 创建普通用户并设置密码
 
 if [ "$UID" != "0" ]; then
 	echo "请使用 root 账户执行本程序."

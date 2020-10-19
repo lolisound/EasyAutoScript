@@ -7,81 +7,14 @@ if [ "$ID" != "fedora" ]; then
     exit 1
 fi
 
-## Source Tuna.moe
-cp /etc/yum.repos.d/fedora.repo /etc/yum.repos.d/fedora.repo.bak
-echo "[fedora]
-name=Fedora \$releasever - \$basearch
-failovermethod=priority
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora/releases/\$releasever/Everything/\$basearch/os/
-metadata_expire=28d
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-\$releasever-\$basearch
-skip_if_unavailable=False" > /etc/yum.repos.d/fedora.repo
-cp /etc/yum.repos.d/fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo.bak
-echo "[updates]
-name=Fedora \$releasever - \$basearch - Updates
-failovermethod=priority
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora/updates/\$releasever/Everything/\$basearch/
-enabled=1
-gpgcheck=1
-metadata_expire=6h
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-\$releasever-\$basearch
-skip_if_unavailable=False" > /etc/yum.repos.d/fedora-updates.repo
-cp /etc/yum.repos.d/fedora-modular.repo /etc/yum.repos.d/fedora-modular.repo.bak
-echo "[fedora-modular]
-name=Fedora Modular \$releasever - \$basearch
-failovermethod=priority
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora/releases/\$releasever/Modular/\$basearch/os/
-enabled=1
-metadata_expire=7d
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-\$releasever-\$basearch
-skip_if_unavailable=False" > /etc/yum.repos.d/fedora-modular.repo
-cp /etc/yum.repos.d/fedora-updates-modular.repo /etc/yum.repos.d/fedora-updates-modular.repo.bak
-echo "[updates-modular]
-name=Fedora Modular \$releasever - \$basearch - Updates
-failovermethod=priority
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora/updates/\$releasever/Modular/\$basearch/
-enabled=1
-gpgcheck=1
-metadata_expire=6h
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-\$releasever-\$basearch
-skip_if_unavailable=False" > /etc/yum.repos.d/fedora-updates-modular.repo
-
 dnf makecache
 dnf upgrade -y
-
-## Proxy
-export ALL_PROXY="socks5://192.168.0.120:1080"
-export http_proxy="socks5://192.168.0.120:1080"
-export https_proxy="socks5://192.168.0.120:1080"
-
-## BBR
-echo "net.core.default_qdisc = fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control = bbr" >> /etc/sysctl.conf
-sysctl -p
 
 # sudo
 echo "$username  ALL=(ALL:ALL)  NOPASSWD:ALL" >> /etc/sudoers
 
 ## Git
 dnf install -y git wget curl
-git config --global user.name "lolisound"
-git config --global user.email "lolisound@gmail.com"
-git config --global color.ui true
-git config --global push.default simple
-git config --global core.autocrlf input
-git config --global core.safecrlf true
-git config --global http.proxy 'socks5://192.168.0.120:1080'
-git config --global https.proxy 'socks5://192.168.0.120:1080'
-su - misaka -c "git config --global user.name \"lolisound\""
-su - misaka -c "git config --global user.email \"lolisound@gmail.com\""
-su - misaka -c "git config --global color.ui true"
-su - misaka -c "git config --global push.default simple"
-su - misaka -c "git config --global core.autocrlf input"
-su - misaka -c "git config --global core.safecrlf true"
-su - misaka -c "git config --global http.proxy 'socks5://192.168.0.120:1080'"
-su - misaka -c "git config --global https.proxy 'socks5://192.168.0.120:1080'"
 
 ## hosts
 git clone --depth=1 https://github.com/googlehosts/hosts
@@ -136,10 +69,10 @@ dnf install -y ibus-rime
 
 # zsh
 dnf install -y zsh zsh-syntax-highlighting zsh-autosuggestions
-sh -c 'echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> /etc/zsh/zshrc'
-sh -c 'echo "setopt no_nomatch" >> /etc/zsh/zshrc'
-sh -c 'echo "zstyle \": completion:*\" rehash true" >> /etc/zsh/zshrc'
-sh -c 'echo "plugins=(zsh-autosuggestions)" >> /etc/zsh/zshrc'
+sh -c 'echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> /etc/zshrc'
+sh -c 'echo "setopt no_nomatch" >> /etc/zshrc'
+sh -c 'echo "zstyle \": completion:*\" rehash true" >> /etc/zshrc'
+sh -c 'echo "plugins=(zsh-autosuggestions)" >> /etc/zshrc'
 
 ## SSH
 sed -i "s/#TCPKeepAlive yes/TCPKeepAlive yes\nClientAliveInterval 60\nClientAliveCountMax 120/g" /etc/ssh/sshd_config
