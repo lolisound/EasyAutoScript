@@ -5,6 +5,9 @@ if [ "$UID" != "0" ]; then
 	exit 0
 fi
 
+# install sudo
+apt install -y sudo
+
 echo "请输入用户名："
 read username
 if test -n "$username" ; then
