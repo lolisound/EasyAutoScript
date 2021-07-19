@@ -22,6 +22,9 @@ mkdir -p ~/.config/ibus/rime
 echo -e "patch:\n  \"menu/page_size\": 9" > ~/.config/ibus/rime/default.custom.yaml
 ibus-daemon -drx
 
+# nfs
+apt-get install -y nfs-common
+
 # keepass2
 apt-get install -y keepass2 xdotool
 keepass2='/usr/lib/keepass2'
@@ -30,8 +33,7 @@ cp Chinese_Simplified.lngx $keepass2/Languages
 echo -e "<KeePass2 Auto-Type>"
 echo -e "mono $keepass2/KeePass.exe --auto-type\n"
 
-# nfs
-apt-get install -y nfs-common
+
 
 # mount
 # mount.nfs 192.168.1.*:/* /mnt
@@ -39,7 +41,7 @@ apt-get install -y nfs-common
 # 192.168.1.*:/*  /mnt nfs  defaults  0  0
 
 # Google Chrome
-# https://www.google.cn/chrome/index.html
+# https://www.google.cn/chrome/
 
 # VirtualBox
 # https://www.virtualbox.org/wiki/Downloads
@@ -55,3 +57,6 @@ apt-get install -y nfs-common
 
 # Atom
 # https://atom.io/
+
+# 
+# https://music.163.com/#/download

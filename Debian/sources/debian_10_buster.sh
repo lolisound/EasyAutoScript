@@ -16,6 +16,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free" > /etc/apt/sources.list
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
+" > /etc/apt/sources.list
 
 apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean

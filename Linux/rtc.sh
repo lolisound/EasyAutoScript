@@ -6,3 +6,4 @@ if [ "$UID" != "0" ]; then
 fi
 
 timedatectl set-local-rtc 1 --adjust-system-clock
+hwclock --systohc
