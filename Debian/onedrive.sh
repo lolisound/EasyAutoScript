@@ -1,10 +1,12 @@
+#!/bin/bash
+
 # onedrive
 # https://github.com/abraunegg/onedrive
 
+# ubuntu:PPA
 sudo add-apt-repository ppa:yann1ck/onedrive
-sudo apt-get updatei
-apt install onedrive -y
-onedrive
+sudo apt-get update
+sudo apt install onedrive -y
 
 # 显示你的配置
 onedrive --display-config

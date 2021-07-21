@@ -1,4 +1,7 @@
-# OBS
+#!/bin/bash
+
+# OBS - Open Broadcaster Software
+# https://obsproject.com/wiki/install-instructions#linux
 
 sudo apt install ffmpeg -y
 

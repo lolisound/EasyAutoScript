@@ -10,6 +10,7 @@ apt install -y libreoffice
 apt install -y vlc
 apt install -y gimp
 apt install -y inkscape
+apt install -y krita
 
 # fonts
 apt-get install -y fonts-noto fonts-inconsolata fonts-wqy-zenhei fonts-wqy-microhei fonts-fantasque-sans
@@ -32,8 +33,6 @@ mkdir $keepass2/Languages
 cp Chinese_Simplified.lngx $keepass2/Languages
 echo -e "<KeePass2 Auto-Type>"
 echo -e "mono $keepass2/KeePass.exe --auto-type\n"
-
-
 
 # mount
 # mount.nfs 192.168.1.*:/* /mnt

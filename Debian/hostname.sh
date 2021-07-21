@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # 修改主机名
 
 if [ "$UID" != "0" ]; then
